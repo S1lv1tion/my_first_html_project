@@ -1,0 +1,3223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Salvation Chintalu | Developer Portfolio</title>
+
+    <meta name="description"
+        content="Salvation Chintalu - CSE AI & ML student at Quad AI School of Technology and Management, exploring Full-Stack Development and Artificial Intelligence.">
+
+    <meta name="theme-color" content="#08090d">
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- LUCIDE ICONS -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <style>
+
+        /* ==================================
+           01. GLOBAL SETTINGS
+        ================================== */
+
+        :root {
+
+            --bg: #08090d;
+
+            --surface: #101219;
+
+            --surface-light: #171a24;
+
+            --text: #f5f5f7;
+
+            --muted: #9296a5;
+
+            --purple: #a78bfa;
+
+            --cyan: #67e8f9;
+
+            --border: rgba(255,255,255,0.09);
+
+        }
+
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+            scroll-padding-top: 90px;
+
+        }
+
+
+        body {
+
+            background: var(--bg);
+
+            color: var(--text);
+
+            font-family: 'DM Sans', sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+            background:
+
+                radial-gradient(
+                    circle at 75% 15%,
+                    rgba(124,58,237,0.13),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 10% 60%,
+                    rgba(34,211,238,0.06),
+                    transparent 30%
+                );
+
+        }
+
+
+        a {
+
+            text-decoration: none;
+
+            color: inherit;
+
+        }
+
+
+        button,
+        input,
+        textarea {
+
+            font-family: inherit;
+
+        }
+
+
+        .container {
+
+            width: min(1160px, 90%);
+
+            margin: auto;
+
+        }
+
+
+        .section {
+
+            padding: 110px 0;
+
+        }
+
+
+        .section-label {
+
+            color: var(--purple);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .section-title {
+
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-size: clamp(34px, 5vw, 54px);
+
+            letter-spacing: -2px;
+
+            line-height: 1.15;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .section-description {
+
+            color: var(--muted);
+
+            max-width: 570px;
+
+            line-height: 1.9;
+
+            font-size: 15px;
+
+        }
+
+
+        .gradient-text {
+
+            background: linear-gradient(
+                100deg,
+                #a78bfa,
+                #67e8f9
+            );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+        }
+
+
+
+        /* ==================================
+           02. NAVIGATION
+        ================================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            padding: 22px 0;
+
+            background: rgba(8,9,13,0.82);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid var(--border);
+
+        }
+
+
+        .nav-content {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .logo {
+
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-size: 24px;
+
+            font-weight: 700;
+
+            letter-spacing: -1px;
+
+        }
+
+
+        .logo span {
+
+            color: var(--purple);
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 32px;
+
+            list-style: none;
+
+        }
+
+
+        .nav-links a {
+
+            font-size: 13px;
+
+            color: var(--muted);
+
+            transition: .3s;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: white;
+
+        }
+
+
+        .nav-cta {
+
+            padding: 11px 20px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            transition: .3s;
+
+        }
+
+
+        .nav-cta:hover {
+
+            background: var(--purple);
+
+            color: black;
+
+        }
+
+
+        .menu-toggle {
+
+            display: none;
+
+            background: none;
+
+            border: none;
+
+            color: white;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+        }
+
+
+
+        /* ==================================
+           03. HERO SECTION
+        ================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 120px;
+
+            position: relative;
+
+        }
+
+
+        .hero-grid {
+
+            display: grid;
+
+            grid-template-columns: 1.1fr .9fr;
+
+            align-items: center;
+
+            gap: 35px;
+
+        }
+
+
+        .availability {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,0.03);
+
+            padding: 10px 16px;
+
+            border-radius: 30px;
+
+            color: #b8bbc8;
+
+            font-size: 12px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .status-dot {
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #4ade80;
+
+            box-shadow: 0 0 12px #4ade80;
+
+        }
+
+
+        .hero h1 {
+
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-size: clamp(43px, 6vw, 73px);
+
+            line-height: 1.08;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .hero-description {
+
+            max-width: 530px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            margin-bottom: 32px;
+
+        }
+
+
+        .hero-buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 15px 24px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: .3s;
+
+            cursor: pointer;
+
+        }
+
+
+        .btn-primary {
+
+            background: var(--purple);
+
+            color: #08090d;
+
+        }
+
+
+        .btn-primary:hover {
+
+            background: var(--cyan);
+
+            transform: translateY(-4px);
+
+        }
+
+
+        .btn-secondary {
+
+            border: 1px solid var(--border);
+
+        }
+
+
+        .btn-secondary:hover {
+
+            border-color: var(--purple);
+
+            transform: translateY(-4px);
+
+        }
+
+
+        .hero-meta {
+
+            display: flex;
+
+            gap: 28px;
+
+            margin-top: 50px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+        }
+
+
+        .hero-meta strong {
+
+            display: block;
+
+            color: white;
+
+            font-size: 18px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+
+        /* ==================================
+           04. PROFILE AVATAR
+        ================================== */
+
+        .avatar-wrapper {
+
+            height: 500px;
+
+            width: 100%;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .avatar-glow {
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            background: rgba(139,92,246,0.25);
+
+            filter: blur(90px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+        }
+
+
+        .profile-3d {
+
+            width: 350px;
+
+            height: 350px;
+
+            position: relative;
+
+            perspective: 1000px;
+
+            transform-style: preserve-3d;
+
+            transition: transform .2s ease-out;
+
+            z-index: 2;
+
+        }
+
+
+        .profile-image {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 3px solid rgba(167,139,250,.7);
+
+            box-shadow:
+
+                0 0 40px rgba(139,92,246,.25),
+
+                0 0 100px rgba(34,211,238,.1);
+
+            transform: translateZ(25px);
+
+        }
+
+
+        .profile-ring {
+
+            position: absolute;
+
+            inset: -18px;
+
+            border: 1px solid rgba(103,232,249,.65);
+
+            border-radius: 50%;
+
+            animation: rotateRing 15s linear infinite;
+
+        }
+
+
+        .profile-ring::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 12px;
+
+            height: 12px;
+
+            background: var(--cyan);
+
+            border-radius: 50%;
+
+            top: 15%;
+
+            right: 15%;
+
+            box-shadow: 0 0 15px var(--cyan);
+
+        }
+
+
+        @keyframes rotateRing {
+
+            from {
+
+                transform: rotate(0deg);
+
+            }
+
+            to {
+
+                transform: rotate(360deg);
+
+            }
+
+        }
+
+
+        .floating-card {
+
+            position: absolute;
+
+            z-index: 3;
+
+            background: rgba(20,22,32,.92);
+
+            border: 1px solid var(--border);
+
+            padding: 14px 18px;
+
+            border-radius: 10px;
+
+            backdrop-filter: blur(15px);
+
+            font-size: 11px;
+
+            color: var(--muted);
+
+            animation: float 4s ease-in-out infinite;
+
+        }
+
+
+        .floating-card strong {
+
+            display: block;
+
+            color: white;
+
+            margin-top: 6px;
+
+            font-size: 12px;
+
+        }
+
+
+        .card-one {
+
+            top: 20%;
+
+            right: 0;
+
+        }
+
+
+        .card-two {
+
+            bottom: 17%;
+
+            left: 0;
+
+            animation-delay: 1.5s;
+
+        }
+
+
+        @keyframes float {
+
+            0%,100% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-13px);
+
+            }
+
+        }
+
+
+
+        /* ==================================
+           05. ABOUT ME
+        ================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 55px;
+
+            align-items: center;
+
+        }
+
+
+        .about-card {
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            padding: 35px;
+
+            border-radius: 16px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: .3s;
+
+        }
+
+
+        .about-card:hover {
+
+            border-color: rgba(167,139,250,.5);
+
+            transform: translateY(-5px);
+
+        }
+
+
+        .about-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .about-card h3 {
+
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-size: 24px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .about-card p {
+
+            color: var(--muted);
+
+            line-height: 1.9;
+
+            font-size: 14px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .about-card strong {
+
+            color: white;
+
+        }
+
+
+        .affiliation {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            border: 1px solid rgba(167,139,250,.3);
+
+            background: rgba(167,139,250,.08);
+
+            padding: 11px 16px;
+
+            border-radius: 7px;
+
+            color: var(--purple);
+
+            font-size: 12px;
+
+        }
+
+
+        .education-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-top: 20px;
+
+            padding: 12px 15px;
+
+            background: rgba(167,139,250,.08);
+
+            border: 1px solid rgba(167,139,250,.25);
+
+            border-radius: 8px;
+
+            color: var(--purple);
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        /* ==================================
+           06. EDUCATION DETAILS
+        ================================== */
+
+        .education-card {
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            background: rgba(255,255,255,.025);
+
+            border: 1px solid var(--border);
+
+            border-radius: 12px;
+
+        }
+
+
+        .education-card h4 {
+
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-size: 18px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .education-card p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+        }
+
+
+
+        /* ==================================
+           07. TECH STACK
+        ================================== */
+
+        .tech-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(5,1fr);
+
+            gap: 15px;
+
+            margin-top: 45px;
+
+        }
+
+
+        .tech-card {
+
+            padding: 25px 17px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 13px;
+
+            transition: .35s;
+
+        }
+
+
+        .tech-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: var(--purple);
+
+            box-shadow: 0 15px 35px rgba(139,92,246,.08);
+
+        }
+
+
+        .tech-icon {
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .tech-card h3 {
+
+            font-size: 16px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .tech-card p {
+
+            font-size: 11px;
+
+            color: var(--muted);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .progress-track {
+
+            height: 5px;
+
+            background: #272a36;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+        }
+
+
+        .progress-fill {
+
+            height: 100%;
+
+            width: 0;
+
+            background: linear-gradient(
+                90deg,
+                var(--purple),
+                var(--cyan)
+            );
+
+            border-radius: 20px;
+
+            transition: width 1.5s ease;
+
+        }
+
+
+        .progress-info {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 10px;
+
+            font-size: 10px;
+
+            color: var(--muted);
+
+        }
+
+
+        .learning-status {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 22px 24px;
+
+            margin-top: 25px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            background: rgba(255,255,255,.02);
+
+            gap: 15px;
+
+        }
+
+
+        .live-status {
+
+            color: #4ade80;
+
+            font-size: 12px;
+
+            white-space: nowrap;
+
+        }
+
+
+        .learning-ticker {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            transition: opacity .4s;
+
+            text-align: right;
+
+        }
+
+
+
+        /* ==================================
+           08. PROJECTS
+        ================================== */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 22px;
+
+            margin-top: 45px;
+
+        }
+
+
+        .project-card {
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            transition: .35s;
+
+        }
+
+
+        .project-card:hover {
+
+            transform: translateY(-7px);
+
+            border-color: var(--purple);
+
+        }
+
+
+        .project-preview {
+
+            height: 230px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,.2),
+                    transparent 65%
+                ),
+
+                #13151e;
+
+        }
+
+
+        .project-preview span {
+
+            font-size: 48px;
+
+        }
+
+
+        .project-preview h3 {
+
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-size: 25px;
+
+            letter-spacing: -1px;
+
+        }
+
+
+        .project-content {
+
+            padding: 27px;
+
+        }
+
+
+        .project-content h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .project-content p {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .project-tags {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .project-tags span {
+
+            font-size: 10px;
+
+            padding: 7px 10px;
+
+            background: rgba(167,139,250,.08);
+
+            color: var(--purple);
+
+            border-radius: 5px;
+
+        }
+
+
+        .project-status {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #fbbf24;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        /* ==================================
+           09. CONTACT
+        ================================== */
+
+        .contact-wrapper {
+
+            display: grid;
+
+            grid-template-columns: .8fr 1.2fr;
+
+            gap: 50px;
+
+            margin-top: 45px;
+
+        }
+
+
+        .contact-info h3 {
+
+            font-family: 'Space Grotesk', sans-serif;
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .contact-info p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .contact-details {
+
+            margin-top: 30px;
+
+            display: grid;
+
+            gap: 20px;
+
+        }
+
+
+        .contact-details a {
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            transition: .3s;
+
+        }
+
+
+        .contact-details a:hover {
+
+            color: var(--cyan);
+
+        }
+
+
+        .contact-form {
+
+            padding: 30px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 12px;
+
+            color: #c5c7d0;
+
+        }
+
+
+        .form-group input,
+        .form-group textarea {
+
+            width: 100%;
+
+            background: #090b10;
+
+            border: 1px solid var(--border);
+
+            padding: 14px;
+
+            border-radius: 7px;
+
+            color: white;
+
+            outline: none;
+
+            font-size: 13px;
+
+            transition: .3s;
+
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+
+            border-color: var(--purple);
+
+        }
+
+
+        .form-group textarea {
+
+            height: 130px;
+
+            resize: vertical;
+
+        }
+
+
+        .contact-form button {
+
+            width: 100%;
+
+            border: none;
+
+        }
+
+
+
+        /* ==================================
+           10. FOOTER
+        ================================== */
+
+        footer {
+
+            border-top: 1px solid var(--border);
+
+            padding: 30px 0;
+
+        }
+
+
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        footer p {
+
+            font-size: 12px;
+
+            color: var(--muted);
+
+        }
+
+
+        .social-links {
+
+            display: flex;
+
+            gap: 20px;
+
+        }
+
+
+        .social-links a {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            transition: .3s;
+
+        }
+
+
+        .social-links a:hover {
+
+            color: var(--purple);
+
+        }
+
+
+
+        /* ==================================
+           11. SCROLL ANIMATIONS
+        ================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            transition:
+
+                opacity .8s ease,
+
+                transform .8s ease;
+
+        }
+
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+
+
+        /* ==================================
+           12. RESPONSIVE DESIGN
+        ================================== */
+
+        @media(max-width:950px) {
+
+            .hero-grid,
+            .about-grid,
+            .contact-wrapper {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .hero {
+
+                padding-top: 145px;
+
+            }
+
+
+            .avatar-wrapper {
+
+                height: 420px;
+
+            }
+
+
+            .tech-grid {
+
+                grid-template-columns: repeat(3,1fr);
+
+            }
+
+        }
+
+
+
+        @media(max-width:650px) {
+
+            .section {
+
+                padding: 80px 0;
+
+            }
+
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 0;
+
+                width: 100%;
+
+                padding: 25px;
+
+                background: #101219;
+
+                border-bottom: 1px solid var(--border);
+
+                flex-direction: column;
+
+                gap: 22px;
+
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+
+            }
+
+
+            .menu-toggle {
+
+                display: block;
+
+            }
+
+
+            .nav-cta {
+
+                display: none;
+
+            }
+
+
+            .hero h1 {
+
+                letter-spacing: -2px;
+
+                font-size: 45px;
+
+            }
+
+
+            .hero-meta {
+
+                gap: 18px;
+
+            }
+
+
+            .avatar-wrapper {
+
+                height: 340px;
+
+            }
+
+
+            .profile-3d {
+
+                width: 255px;
+
+                height: 255px;
+
+            }
+
+
+            .card-one {
+
+                right: -5px;
+
+            }
+
+
+            .card-two {
+
+                left: -5px;
+
+            }
+
+
+            .tech-grid {
+
+                grid-template-columns: repeat(2,1fr);
+
+            }
+
+
+            .projects-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .learning-status {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+
+            .learning-ticker {
+
+                text-align: left;
+
+            }
+
+
+            .footer-content {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+        }
+
+
+        @media(prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration: .01ms !important;
+
+                transition-duration: .01ms !important;
+
+                scroll-behavior: auto !important;
+
+            }
+
+            .reveal {
+
+                opacity: 1;
+
+                transform: none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================
+         NAVIGATION
+    ================================== -->
+
+    <nav>
+
+        <div class="container nav-content">
+
+            <a href="#home" class="logo">
+
+                SALVATION<span>.</span>
+
+            </a>
+
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#education">Education</a></li>
+
+                <li><a href="#stack">Tech Stack</a></li>
+
+                <li><a href="#projects">Projects</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+
+            <a href="#contact" class="nav-cta">
+
+                Let's Connect ↗
+
+            </a>
+
+
+            <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ==================================
+         HERO SECTION
+    ================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="container hero-grid">
+
+
+            <div class="hero-content reveal">
+
+
+                <div class="availability">
+
+                    <span class="status-dot"></span>
+
+                    Building. Learning. Creating.
+
+                </div>
+
+
+                <h1>
+
+                    Hello, I'm
+
+                    <br>
+
+                    <span class="gradient-text">
+
+                        Salvation Chintalu.
+
+                    </span>
+
+                    <br>
+
+                    Developer in Progress.
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    I'm a first-year Computer Science and Engineering
+                    student specializing in Artificial Intelligence
+                    and Machine Learning.
+
+                    Exploring Full-Stack Development, AI and
+                    building meaningful digital experiences
+                    through continuous learning.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn btn-primary">
+
+                        Explore My Work ↗
+
+                    </a>
+
+
+                    <a href="#contact" class="btn btn-secondary">
+
+                        Contact Me
+
+                    </a>
+
+                </div>
+
+
+                <div class="hero-meta">
+
+
+                    <div>
+
+                        <strong>05</strong>
+
+                        Technologies
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>01</strong>
+
+                        Year
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>Quad AI</strong>
+
+                        Institution
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- PERSONAL PHOTO AVATAR -->
+
+            <div class="avatar-wrapper reveal">
+
+
+                <div class="avatar-glow"></div>
+
+
+                <div class="profile-3d" id="profile3D">
+
+
+                    <div class="profile-ring"></div>
+
+
+                    <!-- YOUR PHOTO -->
+
+                    <img
+
+                        src="salvation1.png"
+
+                        alt="Salvation Chintalu"
+
+                        class="profile-image"
+
+                        loading="eager"
+
+                    >
+
+                </div>
+
+
+
+                <div class="floating-card card-one">
+
+                    CURRENT FOCUS
+
+                    <strong>Full-Stack Development</strong>
+
+                </div>
+
+
+
+                <div class="floating-card card-two">
+
+                    EDUCATION
+
+                    <strong>Quad AI · Bengaluru</strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================
+         ABOUT ME
+    ================================== -->
+
+    <section class="section" id="about">
+
+        <div class="container about-grid">
+
+
+            <div class="reveal">
+
+
+                <div class="section-label">
+
+                    01 / About Me
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    More Than Just
+
+                    <br>
+
+                    <span class="gradient-text">
+
+                        Writing Code.
+
+                    </span>
+
+                </h2>
+
+
+                <p class="section-description">
+
+                    I'm Salvation Chintalu, a technology enthusiast
+                    passionate about software development,
+                    Artificial Intelligence and building useful
+                    digital products.
+
+                    Currently, I'm exploring programming,
+                    experimenting with AI tools and developing
+                    my understanding of how modern applications
+                    are created.
+
+                    My goal is to become an independent developer
+                    capable of transforming ideas into real-world
+                    solutions.
+
+                </p>
+
+
+                <div class="affiliation">
+
+                    ✦ Quad AI School of Technology and Management
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- DEVELOPMENT PHILOSOPHY -->
+
+            <div class="about-card reveal">
+
+
+                <div class="about-icon">
+
+                    ◈
+
+                </div>
+
+
+                <h3>
+
+                    My Development Philosophy
+
+                </h3>
+
+
+                <p>
+
+                    I believe the best way to understand technology
+                    is through building real-world projects.
+
+                </p>
+
+
+                <p>
+
+                    Currently, I use AI-assisted and visual coding
+                    tools to experiment, develop projects and
+                    understand how applications work.
+
+                </p>
+
+
+                <p>
+
+                    My long-term goal is to write code independently,
+                    understand the fundamentals deeply and use
+                    AI tools as intelligent development assistants.
+
+                </p>
+
+
+                <div class="education-badge">
+
+                    <span class="status-dot"></span>
+
+                    Learning & Growing Every Day
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================
+         EDUCATION
+    ================================== -->
+
+    <section class="section" id="education">
+
+        <div class="container">
+
+
+            <div class="reveal">
+
+
+                <div class="section-label">
+
+                    02 / Education
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    My Academic
+
+                    <span class="gradient-text">
+
+                        Journey.
+
+                    </span>
+
+                </h2>
+
+
+                <p class="section-description">
+
+                    Building a strong foundation in computer
+                    science, programming and artificial intelligence.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="education-card reveal">
+
+
+                <div class="about-icon">
+
+                    🎓
+
+                </div>
+
+
+                <h4>
+
+                    B.Tech in Computer Science and Engineering
+                    (AI & ML)
+
+                </h4>
+
+
+                <p>
+
+                    <strong>
+
+                        Quad AI School of Technology and Management
+
+                    </strong>
+
+                    <br>
+
+                    Bengaluru, Karnataka, India
+
+                </p>
+
+
+                <div class="education-badge">
+
+                    <span class="status-dot"></span>
+
+                    First Year · First Semester
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================
+         TECH STACK
+    ================================== -->
+
+    <section class="section" id="stack">
+
+        <div class="container">
+
+
+            <div class="reveal">
+
+
+                <div class="section-label">
+
+                    03 / Technology
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Active Learning
+
+                    <br>
+
+                    <span class="gradient-text">
+
+                        & Tech Stack.
+
+                    </span>
+
+                </h2>
+
+
+                <p class="section-description">
+
+                    My current programming journey.
+                    These progress indicators are editable
+                    self-assessments, not certified proficiency scores.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="tech-grid">
+
+
+                <!-- HTML -->
+
+                <div class="tech-card reveal">
+
+                    <div class="tech-icon">🌐</div>
+
+                    <h3>HTML5</h3>
+
+                    <p>Web Structure</p>
+
+
+                    <div class="progress-track">
+
+                        <div class="progress-fill"
+                            data-progress="20">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-info">
+
+                        <span>Set your level</span>
+
+                        <span>0%</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CSS -->
+
+                <div class="tech-card reveal">
+
+                    <div class="tech-icon">🎨</div>
+
+                    <h3>CSS3</h3>
+
+                    <p>Web Design</p>
+
+
+                    <div class="progress-track">
+
+                        <div class="progress-fill"
+                            data-progress="30">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-info">
+
+                        <span>Set your level</span>
+
+                        <span>0%</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- JAVASCRIPT -->
+
+                <div class="tech-card reveal">
+
+                    <div class="tech-icon">⚡</div>
+
+                    <h3>JavaScript</h3>
+
+                    <p>Programming</p>
+
+
+                    <div class="progress-track">
+
+                        <div class="progress-fill"
+                            data-progress="10">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-info">
+
+                        <span>Set your level</span>
+
+                        <span>0%</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PYTHON -->
+
+                <div class="tech-card reveal">
+
+                    <div class="tech-icon">🐍</div>
+
+                    <h3>Python</h3>
+
+                    <p>Programming & AI</p>
+
+
+                    <div class="progress-track">
+
+                        <div class="progress-fill"
+                            data-progress="40">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-info">
+
+                        <span>Set your level</span>
+
+                        <span>0%</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- JAVA -->
+
+                <div class="tech-card reveal">
+
+                    <div class="tech-icon">☕</div>
+
+                    <h3>Java</h3>
+
+                    <p>OOP & Development</p>
+
+
+                    <div class="progress-track">
+
+                        <div class="progress-fill"
+                            data-progress="0">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="progress-info">
+
+                        <span>Set your level</span>
+
+                        <span>0%</span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- LEARNING TICKER -->
+
+            <div class="learning-status reveal">
+
+
+                <div class="live-status">
+
+                    ● LEARNING JOURNEY ACTIVE
+
+                </div>
+
+
+                <div class="learning-ticker" id="ticker">
+
+                    Currently exploring modern development...
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================
+         PROJECTS
+    ================================== -->
+
+    <section class="section" id="projects">
+
+        <div class="container">
+
+
+            <div class="reveal">
+
+
+                <div class="section-label">
+
+                    04 / Projects
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Ideas Into
+
+                    <span class="gradient-text">
+
+                        Reality.
+
+                    </span>
+
+                </h2>
+
+
+                <p class="section-description">
+
+                    Projects I'm developing and exploring
+                    throughout my technology journey.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="projects-grid">
+
+
+
+                <!-- AI LEARNING PLATFORM -->
+
+                <div class="project-card reveal">
+
+
+                    <div class="project-preview">
+
+                        <span>🤖</span>
+
+                        <h3>AI LEARNING</h3>
+
+                    </div>
+
+
+
+                    <div class="project-content">
+
+
+                        <h3>
+
+                            AI-Powered Learning Platform
+
+                        </h3>
+
+
+                        <p>
+
+                            An interactive programming education
+                            platform currently in development.
+
+                            The vision is to make programming
+                            easier through visual lessons,
+                            animated explanations and an
+                            AI-powered learning assistant.
+
+                            The project is being developed
+                            through AI-assisted development
+                            and continuous experimentation.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>HTML</span>
+
+                            <span>CSS</span>
+
+                            <span>JavaScript</span>
+
+                            <span>AI Integration</span>
+
+                        </div>
+
+
+                        <div class="project-status">
+
+                            🚧 Currently in Development
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PERSONAL PORTFOLIO -->
+
+                <div class="project-card reveal">
+
+
+                    <div class="project-preview">
+
+                        <span>💻</span>
+
+                        <h3>MY DIGITAL IDENTITY</h3>
+
+                    </div>
+
+
+
+                    <div class="project-content">
+
+
+                        <h3>
+
+                            Personal Developer Portfolio
+
+                        </h3>
+
+
+                        <p>
+
+                            My personal website showcasing
+                            my education, learning journey,
+                            technical interests and projects.
+
+                            Currently developed with AI-assisted
+                            coding tools, with the goal of
+                            gradually building and maintaining
+                            it independently.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>HTML</span>
+
+                            <span>CSS</span>
+
+                            <span>JavaScript</span>
+
+                            <span>Responsive Design</span>
+
+                        </div>
+
+
+                        <div class="project-status">
+
+                            🚧 Improving Continuously
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================
+         CONTACT
+    ================================== -->
+
+    <section class="section" id="contact">
+
+        <div class="container">
+
+
+            <div class="reveal">
+
+
+                <div class="section-label">
+
+                    05 / Contact
+
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Let's Build Something
+
+                    <br>
+
+                    <span class="gradient-text">
+
+                        Meaningful.
+
+                    </span>
+
+                </h2>
+
+
+            </div>
+
+
+
+            <div class="contact-wrapper">
+
+
+
+                <div class="contact-info reveal">
+
+
+                    <h3>
+
+                        Have an idea?
+
+                    </h3>
+
+
+                    <p>
+
+                        Whether it's a project collaboration,
+                        an interesting opportunity or simply
+                        a conversation about technology,
+                        I'd love to connect.
+
+                    </p>
+
+
+
+                    <div class="contact-details">
+
+
+                        <!-- REPLACE WITH YOUR EMAIL -->
+
+                        <a href="chintalusalvation@gmail.com">
+
+                            ✉ Gmail.
+                        </a>
+
+
+
+                        <!-- GITHUB -->
+
+                        <a href="https://github.com/S1lv1tion"
+
+                            target="_blank"
+
+                            rel="noopener noreferrer">
+
+                            ↗ GitHub.
+
+                        </a>
+
+
+
+                        <!-- LINKEDIN -->
+
+                        <a href="https://www.linkedin.com/"
+
+                            target="_blank"
+
+                            rel="noopener noreferrer">
+
+                            ↗ LinkedIn
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <!-- CONTACT FORM -->
+
+                <form class="contact-form reveal"
+                    id="contactForm">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+
+                            Your Name
+
+                        </label>
+
+
+                        <input
+
+                            type="text"
+
+                            id="name"
+
+                            placeholder="Enter your name"
+
+                            required
+
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+
+                            Email Address
+
+                        </label>
+
+
+                        <input
+
+                            type="email"
+
+                            id="email"
+
+                            placeholder="Enter your email"
+
+                            required
+
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+
+                            Your Message
+
+                        </label>
+
+
+                        <textarea
+
+                            id="message"
+
+                            placeholder="Tell me about your idea..."
+
+                            required
+
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <button type="submit"
+                        class="btn btn-primary">
+
+                        Send Message ↗
+
+                    </button>
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================
+         FOOTER
+    ================================== -->
+
+    <footer>
+
+
+        <div class="container footer-content">
+
+
+            <p>
+
+                © <span id="year"></span>
+
+                Salvation Chintalu.
+
+                Built with curiosity.
+
+            </p>
+
+
+
+            <div class="social-links">
+
+
+                <a href="https://github.com/S1lv1tion"
+
+                    target="_blank"
+
+                    rel="noopener noreferrer">
+
+                    GitHub
+
+                </a>
+
+
+                <a href="https://www.linkedin.com/"
+
+                    target="_blank"
+
+                    rel="noopener noreferrer">
+
+                    LinkedIn
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- ==================================
+         JAVASCRIPT
+    ================================== -->
+
+    <script>
+
+
+        /* ==================================
+           01. MOBILE NAVIGATION
+        ================================== */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen =
+                navLinks.classList.toggle("active");
+
+            menuToggle.textContent =
+                isOpen ? "✕" : "☰";
+
+        });
+
+
+        document.querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("active");
+
+                    menuToggle.textContent = "☰";
+
+                });
+
+            });
+
+
+
+        /* ==================================
+           02. FOOTER YEAR
+        ================================== */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+
+        /* ==================================
+           03. SCROLL REVEAL
+        ================================== */
+
+        const revealObserver =
+            new IntersectionObserver(
+
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+
+                {
+
+                    threshold: 0.12
+
+                }
+
+            );
+
+
+        document.querySelectorAll(".reveal")
+            .forEach(element => {
+
+                revealObserver.observe(element);
+
+            });
+
+
+
+        /* ==================================
+           04. TECH PROGRESS BARS
+
+           Update data-progress values
+           when you want to show your
+           actual learning progress.
+
+           Example: data-progress="40"
+        ================================== */
+
+        const progressObserver =
+            new IntersectionObserver(
+
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            const bar = entry.target;
+
+                            const progress =
+                                Number(bar.dataset.progress);
+
+                            const safeProgress =
+                                Math.max(0, Math.min(100, progress));
+
+                            bar.style.width =
+                                safeProgress + "%";
+
+                            const info =
+                                bar.closest(".tech-card")
+                                   .querySelector(".progress-info");
+
+                            info.innerHTML = `
+
+                                <span>Self-assessed</span>
+
+                                <span>${safeProgress}%</span>
+
+                            `;
+
+                            observer.unobserve(bar);
+
+                        }
+
+                    });
+
+                },
+
+                {
+
+                    threshold: 0.5
+
+                }
+
+            );
+
+
+        document.querySelectorAll(".progress-fill")
+            .forEach(bar => {
+
+                progressObserver.observe(bar);
+
+            });
+
+
+
+        /* ==================================
+           05. LEARNING TICKER
+        ================================== */
+
+        const learningUpdates = [
+
+            "Currently exploring JavaScript fundamentals...",
+
+            "Building responsive interfaces with HTML & CSS...",
+
+            "Exploring Python and Artificial Intelligence...",
+
+            "Strengthening Java programming fundamentals...",
+
+            "Experimenting with AI-assisted development...",
+
+            "Learning by building real-world projects...",
+
+            "Growing one project at a time."
+
+        ];
+
+
+        let tickerIndex = 0;
+
+
+        const ticker =
+            document.getElementById("ticker");
+
+
+        setInterval(() => {
+
+            ticker.style.opacity = 0;
+
+
+            setTimeout(() => {
+
+                tickerIndex =
+
+                    (tickerIndex + 1) %
+
+                    learningUpdates.length;
+
+
+                ticker.textContent =
+
+                    learningUpdates[tickerIndex];
+
+
+                ticker.style.opacity = 1;
+
+            }, 400);
+
+
+        }, 3000);
+
+
+
+        /* ==================================
+           06. INTERACTIVE 3D PHOTO
+
+           Mouse movement controls
+           the photo's 3D perspective.
+        ================================== */
+
+        const profile =
+            document.getElementById("profile3D");
+
+
+        const canHover =
+            window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+
+        if (profile && canHover) {
+
+
+            profile.addEventListener("pointermove", (event) => {
+
+
+                const rect =
+                    profile.getBoundingClientRect();
+
+
+                const x =
+                    (event.clientX - rect.left) / rect.width;
+
+
+                const y =
+                    (event.clientY - rect.top) / rect.height;
+
+
+                const rotateY =
+                    (x - 0.5) * 22;
+
+
+                const rotateX =
+                    (0.5 - y) * 22;
+
+
+                profile.style.transform =
+
+                    `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+
+            });
+
+
+
+            profile.addEventListener("pointerleave", () => {
+
+
+                profile.style.transform =
+
+                    "rotateX(0deg) rotateY(0deg)";
+
+
+            });
+
+        }
+
+
+
+        /* ==================================
+           07. CONTACT FORM
+
+           This opens the visitor's email app.
+
+           Replace YOUR_EMAIL@example.com
+           with your actual email address.
+
+           For direct website submissions,
+           connect a backend or form service.
+        ================================== */
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+
+        contactForm.addEventListener("submit", function(event) {
+
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("name").value;
+
+
+            const email =
+                document.getElementById("email").value;
+
+
+            const message =
+                document.getElementById("message").value;
+
+
+            const recipient =
+                "YOUR_EMAIL@example.com";
+
+
+            const subject =
+                encodeURIComponent(
+
+                    "Portfolio Contact - " + name
+
+                );
+
+
+            const body =
+                encodeURIComponent(
+
+                    "Name: " + name +
+
+                    "\nEmail: " + email +
+
+                    "\n\nMessage:\n" + message
+
+                );
+
+
+            window.location.href =
+
+                `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
